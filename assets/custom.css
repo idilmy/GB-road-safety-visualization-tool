@@ -1,0 +1,18 @@
+/* custom.css */
+
+.rc-slider-handle {
+    background-color: #636EFA; /* Custom color */
+    border-color: #636EFA;
+}
+
+.rc-slider-track {
+    background-color: #636EFA; /* Custom color */
+}
+
+.rc-slider-dot-active {
+    border-color: #636EFA; /* Custom color */
+}
+
+.rc-slider-dot-reverse {
+    border-color: #636EFA; /* Custom color */
+}

@@ -1,0 +1,121 @@
+#toggle-menu-container {
+    width: 30px;
+    height: 100vh;
+    background-color: rgba(245, 245, 245, 0.5);
+    position: fixed;
+    top: 0;
+    left: 34%; /* Start at the right edge of the left-container when open */
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: left 0.5s; /* Smooth transition for the sliding effect */
+}
+
+#toggle-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    opacity: 0; /* Invisible button, clickable area uses the container */
+    width: 100%;
+    height: 100%; /* Full area of the container is clickable */
+}
+
+#close-icon {
+    display: block; /* Show when container is open */
+}
+
+#open-icon {
+    display: none; /* Hide when container is open */
+}
+
+.toggle-menu-open #close-icon {
+    display: none;
+}
+
+.toggle-menu-open #open-icon {
+    display: block;
+}
+
+.toggle-menu-closed #close-icon {
+    display: block;
+}
+
+.toggle-menu-closed #open-icon {
+    display: none;
+}
+
+#left-container {
+    transition: margin-left 0.5s ease-in-out;
+    z-index: 1050;
+
+    position: relative;
+}
+
+#map-container {
+    transition: margin-left 0.5s ease-in-out;
+    width: calc(100% - 34%); /* Initial width */
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* Adjusted to ensure it takes full height */
+    background-color: #F5F5F5; /* Use the same background color as your elegant_colors['background'] */
+    margin-right: 10px;
+}
+
+#map-graph {
+    flex: 1;
+    height: 100%; /* Ensure it takes full height */
+}
+
+#left-container.slide-out {
+    margin-left: -34%;
+}
+
+#left-container.slide-in {
+    margin-left: 0;
+}
+
+
+#toggle-menu-container {
+    position: absolute;
+    top: 50%;
+    left: 34%; /* Adjust this based on the left container's state */
+    transform: translateY(-50%);
+    z-index: 1050;
+    cursor: pointer;
+    transition: left 0.5s ease-in-out;
+}
+
+.toggle-menu-open #map-container {
+    width: 100%;
+    height: 100vh;/* Expand when left menu is hidden */
+}
+
+.toggle-menu-closed #map-container {
+    width: calc(100% - 34%);
+    height: 100vh/* Contract when left menu is visible */
+}
+
+.button-normal {
+    background-color: #FFFFFF;
+    color: #383838;
+    border: 1px solid #76B041;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-active {
+    background-color: #76B041;
+    color: #FFFFFF;
+    border: 1px solid #383838;
+}
+
+.button-normal:hover {
+    background-color: #e6e6e6;
+}
+
+.button-active:active {
+    transform: translateY(2px);
+}
+
